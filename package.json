@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rosie-i/bbc-time-conversion-task#readme",
   "devDependencies": {
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "make-runnable": "^1.3.6"
   }
 }
