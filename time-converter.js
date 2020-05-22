@@ -1,10 +1,15 @@
+// This function rounds a time in seconds up to the nearest 5 minute interval and returns the result as a string
+
 secondsToNearestFiveMin = (seconds) => {
 
-    // Divide input by 300 to find number of 5 minute intervals
-    let totalFiveMinIntervals = seconds/300;
+    // Input should be a valid number of seconds
+    if (isNaN(seconds) || seconds < 0) {
+        return "Invalid input. Input must be a positive number.";
+    }
 
+    // Divide input by 300 to find number of 5 minute intervals
     // Round up to whole number
-    totalFiveMinIntervals = Math.ceil(totalFiveMinIntervals);
+    let totalFiveMinIntervals = Math.ceil(seconds/300);
 
     // Multiply by 5 to get total minutes
     let totalMins = totalFiveMinIntervals*5;
@@ -14,6 +19,6 @@ secondsToNearestFiveMin = (seconds) => {
     return totalMins + " minutes";
 }
 
-secondsToNearestFiveMin(442);
+console.log(secondsToNearestFiveMin(600));
 
 module.exports = secondsToNearestFiveMin;
